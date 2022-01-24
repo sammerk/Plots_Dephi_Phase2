@@ -55,6 +55,6 @@
 <text x='376.28' y='232.83' style='font-size: 9.20px; font-family: Arial Narrow;' textLength='20.10px' lengthAdjust='spacingAndGlyphs'>Paper</text>
 <text x='376.28' y='250.11' style='font-size: 9.20px; font-family: Arial Narrow;' textLength='20.10px' lengthAdjust='spacingAndGlyphs'>Tablet</text>
 <text x='43.95' y='65.12' style='font-size: 12.00px; font-family: Arial Narrow;' textLength='69.48px' lengthAdjust='spacingAndGlyphs'>Groups as color</text>
-<text x='43.95' y='42.78' style='font-size: 18.00px; font-weight: bold; font-family: Arial Narrow;' textLength='59.85px' lengthAdjust='spacingAndGlyphs'>Box Plot</text>
+<text x='43.95' y='42.78' style='font-size: 18.00px; font-weight: bold; font-family: Arial Narrow;' textLength='71.91px' lengthAdjust='spacingAndGlyphs'>Violin Plot</text>
 </g>
 </svg>
