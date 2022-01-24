@@ -42,7 +42,7 @@ ggplot(data, aes(Testscore, dummy, color = Condition, fill = Condition)) +
                width = .3) + 
   ylim(c(.5, 1.5)) + 
   theme_ipsum() + 
-  labs(title = "Box Plot", 
+  labs(title = "Violin Plot", 
        subtitle = "Groups as color") +
   ylab("") + 
   theme(axis.text.y = element_blank())
