@@ -17,6 +17,44 @@ data <- tibble(Paper = round(distribution_normal(309, 53, 15), 0),
   gather(Condition, Testscore) %>% 
   mutate(dummy = 1)
 
+# Boxplot - Groups as color ####
+ggplot(data, aes(Testscore, dummy, color = Condition, fill = Condition)) + 
+  geom_boxplot(alpha = .3, position = "identity",
+               width = .3) + 
+  ylim(c(.5, 1.5)) + 
+  theme_ipsum() + 
+  labs(title = "Box Plot", 
+       subtitle = "Groups as color") +
+  ylab("") + 
+  theme(axis.text.y = element_blank())
+
+ggsave(
+  file = "plots/boxplot_groups_as_color.svg",
+  width = 6,
+  height = 6,
+  device = "svg"
+)
+
+
+# Violinplot - Groups as color ####
+ggplot(data, aes(Testscore, dummy, color = Condition, fill = Condition)) + 
+  geom_violin(alpha = .3, position = "identity",
+               width = .3) + 
+  ylim(c(.5, 1.5)) + 
+  theme_ipsum() + 
+  labs(title = "Box Plot", 
+       subtitle = "Groups as color") +
+  ylab("") + 
+  theme(axis.text.y = element_blank())
+
+ggsave(
+  file = "plots/violinplot_groups_as_color.svg",
+  width = 6,
+  height = 6,
+  device = "svg"
+)
+
+
 
 # Density plot - Groups as color ####
 ggplot(data, aes(Testscore, 
@@ -41,7 +79,9 @@ ggplot(data, aes(Testscore,
   stat_halfeye(alpha = .3) + 
   xlim(c(0, 100)) + 
   theme_ipsum() + 
-  labs(title = "Halfeye Plot", subtitle = "Groups as color")
+  labs(title = "Halfeye Plot", subtitle = "Groups as color") +
+  ylab("") + 
+  theme(axis.text.y = element_blank())
 
 ggsave(
   file = "plots/halfeyeplot_groups_as_color.svg",
@@ -59,7 +99,9 @@ ggplot(data, aes(Testscore,
   stat_cdfinterval(alpha = .3) + 
   xlim(c(0, 100)) + 
   theme_ipsum() + 
-  labs(title = "CDF Bar Plot", subtitle = "Groups as color")
+  labs(title = "CDF Bar Plot", subtitle = "Groups as color") +
+  ylab("") + 
+  theme(axis.text.y = element_blank())
 
 ggsave(
   file = "plots/cdfbarplot_groups_as_color.svg",
@@ -94,7 +136,9 @@ ggplot(data, aes(Testscore, fill = Condition)) +
                     alpha = .3) + 
   xlim(c(0, 100)) + 
   theme_ipsum() + 
-  labs(title = "Dot Plot", subtitle = "Groups as color") 
+  labs(title = "Dot Plot", subtitle = "Groups as color")  +
+  ylab("") + 
+  theme(axis.text.y = element_blank())
 
 ggsave(
   file = "plots/dotplot_groups_as_color.svg",
@@ -133,7 +177,9 @@ ggplot(data, aes(Testscore,
   stat_dots(quantiles = 50, alpha = .3) +
   xlim(c(0, 100)) + 
   theme_ipsum() + 
-  labs(title = "Quantile Dot Plot", subtitle = "Groups as color") 
+  labs(title = "Quantile Dot Plot", subtitle = "Groups as color")  +
+  ylab("") + 
+  theme(axis.text.y = element_blank())
 
 ggsave(
   file = "plots/quantiledotplot_groups_as_color.svg",
@@ -152,7 +198,9 @@ ggplot(data, aes(Testscore,
             alpha = .3) +
   xlim(c(0, 100)) + 
   theme_ipsum() + 
-  labs(title = "Beeswarm Plot", subtitle = "Groups as color") 
+  labs(title = "Beeswarm Plot", subtitle = "Groups as color")  +
+  ylab("") + 
+  theme(axis.text.y = element_blank())
 
 ggsave(
   file = "plots/beeswarmplot_groups_as_color.svg",
@@ -228,7 +276,9 @@ ggplot(data, aes(y = Testscore,
   ylim(c(0, 100)) + 
   theme_ipsum() + 
   labs(title = "Raincloud Plot", subtitle = "Groups as color") +
-  coord_flip()
+  coord_flip() +
+  xlab("") + 
+  theme(axis.text.y = element_blank())
 
 ggsave(
   file = "plots/raincloudplot_groups_as_color.svg",

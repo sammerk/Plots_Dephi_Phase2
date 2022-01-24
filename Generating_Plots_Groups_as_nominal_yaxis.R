@@ -150,12 +150,12 @@ ggsave(
 )
 
 
-# Dotplot - Groups as nominal x-axis ####
+# Dotplot - Groups as nominal y-axis ####
 ggplot(data, aes(Testscore, Condition)) + 
   geom_dotsinterval(layout = c("bin"), binwidth = 1.0) + 
   xlim(c(0, 100)) + 
   theme_ipsum() + 
-  labs(title = "Dot Plot", subtitle = "Groups as nominal x-axis") 
+  labs(title = "Dot Plot", subtitle = "Groups as nominal y-axis") 
 
 ggsave(
   file = "plots/dotplot_groups_as_nominal_yaxis.svg",
@@ -165,12 +165,12 @@ ggsave(
 )
 
 
-# Jitterplot - Groups as nominal x-axis ####
+# Jitterplot - Groups as nominal y-axis ####
 ggplot(data, aes(Testscore, Condition)) + 
   geom_jitter(height = .3) + 
   xlim(c(0, 100)) + 
   theme_ipsum() + 
-  labs(title = "Jitter Plot", subtitle = "Groups as nominal x-axis") 
+  labs(title = "Jitter Plot", subtitle = "Groups as nominal y-axis") 
 
 ggsave(
   file = "plots/jitterplot_groups_as_nominal_yaxis.svg",
@@ -180,12 +180,12 @@ ggsave(
 )
 
 
-# Quantile Dotplots - Groups as nominal x-axis ####
+# Quantile Dotplots - Groups as nominal y-axis ####
 ggplot(data, aes(Testscore, Condition)) + 
   stat_dots(quantiles = 50) +
   xlim(c(0, 100)) + 
   theme_ipsum() + 
-  labs(title = "Quantile Dot Plot", subtitle = "Groups as nominal x-axis") 
+  labs(title = "Quantile Dot Plot", subtitle = "Groups as nominal y-axis") 
 
 ggsave(
   file = "plots/quantiledotplot_groups_as_nominal_yaxis.svg",
@@ -195,12 +195,12 @@ ggsave(
 )
 
 
-# Beeswarmplots - Groups as nominal x-axis ####
+# Beeswarmplots - Groups as nominal y-axis ####
 ggplot(data, aes(Testscore, Condition)) + 
   stat_dots(layout = "swarm", side = "both") +
   xlim(c(0, 100)) + 
   theme_ipsum() + 
-  labs(title = "Beeswarm Plot", subtitle = "Groups as nominal x-axis") 
+  labs(title = "Beeswarm Plot", subtitle = "Groups as nominal y-axis") 
 
 ggsave(
   file = "plots/beeswarmplot_groups_as_nominal_yaxis.svg",
@@ -210,12 +210,12 @@ ggsave(
 )
 
 
-# Sinaplots - Groups as nominal x-axis ####
+# Sinaplots - Groups as nominal y-axis ####
 ggplot(data, aes(Condition, Testscore)) + 
   ggforce::geom_sina() + 
   ylim(c(0, 100)) + 
   theme_ipsum() + 
-  labs(title = "Sina Plot", subtitle = "Groups as nominal x-axis") +
+  labs(title = "Sina Plot", subtitle = "Groups as nominal y-axis") +
   coord_flip()
 
 ggsave(
@@ -226,7 +226,7 @@ ggsave(
 )
 
 
-# Rug Plot - Groups as nominal x-axis ####
+# Rug Plot - Groups as nominal y-axis ####
 ggplot(data, aes(Condition, Testscore)) + 
   geom_point(position = position_jitter(w = 0, h = .5), 
              shape = 124,
@@ -234,7 +234,7 @@ ggplot(data, aes(Condition, Testscore)) +
              alpha = .4) +
   ylim(c(0, 100)) + 
   theme_ipsum() + 
-  labs(title = "Rug Plot", subtitle = "Groups as nominal x-axis") +
+  labs(title = "Rug Plot", subtitle = "Groups as nominal y-axis") +
   coord_flip()
 
 ggsave(
@@ -245,7 +245,7 @@ ggsave(
 )
 
 
-# Raincloud Plot - Groups as nominal x-axis ####
+# Raincloud Plot - Groups as nominal y-axis ####
 ggplot(data, aes(Condition, Testscore)) + 
   ggdist::stat_halfeye(
     adjust = .5, 
@@ -262,7 +262,7 @@ ggplot(data, aes(Condition, Testscore)) +
   ) + 
   ylim(c(0, 100)) + 
   theme_ipsum() + 
-  labs(title = "Raincloud Plot", subtitle = "Groups as nominal x-axis") +
+  labs(title = "Raincloud Plot", subtitle = "Groups as nominal y-axis") +
   coord_flip()
 
 ggsave(
@@ -272,7 +272,7 @@ ggsave(
   device = "svg"
 )
 
-# Gardner-Altman Plot - Groups as nominal x-axis ####
+# Gardner-Altman Plot - Groups as nominal y-axis ####
 unpaired_mean_diff <-
   dabest(
     data,
@@ -284,7 +284,7 @@ unpaired_mean_diff <-
   mean_diff()
 
 plot(unpaired_mean_diff) +
-  labs(title = "Gardner-Altman Plot", subtitle = "Groups as nominal x-axis")
+  labs(title = "Gardner-Altman Plot", subtitle = "Groups as nominal y-axis")
 
 ggsave(
   file = "plots/gardneraltmanplot_groups_as_nominal_yaxis.svg",
